@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: dashboard_db
+    image: mongo:7.0
+    restart: unless-stopped
+    env_file:
+      - .env
+    # environment:
+      # MONGO_INITDB_ROOT_USERNAME: ${MONGO_ADMIN_USER} # For production use
+      # MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD} # For production use
+    volumes:
+      - ./data:/data/db
+      # - ./scripts/docker/mongo-entrypoint/:/docker-entrypoint-initdb.d/ # For production use
+    ports:
+      - ${DB_EXTERNAL_PORT}:27017
+
+  server:
+    container_name: dashboard_server
+    image: dashboard_server
+    # restart: unless-stopped # For production use
+    build:
+      context: .
+      dockerfile: Dockerfile.dev # For development use
+      # dockerfile: Dockerfile # For production use
+    volumes:
+      - ./server/:/usr/src/app/server/ # For development use
+      # - ./logs/:/usr/src/app/logs/ # For production use
+    ports:
+      - ${SERVER_EXTERNAL_PORT}:${SERVER_PORT}
+    depends_on:
+      - db
