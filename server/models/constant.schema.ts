@@ -6,7 +6,10 @@ const constantsSchema = new mongoose.Schema({
     unique: true,
   },
   description: String,
-  type: String,
+  type: {
+    type: String,
+    enum: ["One", "Two", "Three"],
+  },
   value: mongoose.Schema.Types.Mixed,
 });
 

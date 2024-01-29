@@ -15,3 +15,23 @@ const accessSchema = new mongoose.Schema({
 });
 
 export const Access = mongoose.model("Access", accessSchema);
+
+const adminsSchema = new mongoose.Schema({
+  webmail: {
+    type: String,
+    unique: true,
+  },
+  description: String,
+  isStudent: {
+    type: Boolean,
+    default: false,
+  },
+  accesses: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Access",
+    },
+  ],
+});
+
+export const Admins = mongoose.model("Admins", adminsSchema);

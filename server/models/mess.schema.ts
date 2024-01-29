@@ -5,7 +5,10 @@ const messesSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
-  population: Number,
+  population: {
+    type: Number,
+    default: 0,
+  },
   capacity: Number,
   location: {
     type: String,

@@ -6,7 +6,7 @@ const userDetailSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  name: Number,
+  name: String,
   hostelName: String,
   roomNumber: Number,
 });
