@@ -35,3 +35,4 @@ const adminsSchema = new mongoose.Schema({
 });
 
 export const Admins = mongoose.model("Admins", adminsSchema);
+export type Admins = typeof Admins;

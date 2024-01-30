@@ -14,3 +14,4 @@ const constantsSchema = new mongoose.Schema({
 });
 
 export const Constants = mongoose.model("Constants", constantsSchema);
+export type Constants = typeof Constants;

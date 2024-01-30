@@ -12,3 +12,4 @@ const userDetailSchema = new mongoose.Schema({
 });
 
 export const UserDetails = mongoose.model("UserDetails", userDetailSchema);
+export type UserDetails = typeof UserDetails;

@@ -19,3 +19,4 @@ export const UserMessDetails = mongoose.model(
   "UserMessDetails",
   userMessDetailsSchema
 );
+export type UserMessDetails = typeof UserMessDetails;

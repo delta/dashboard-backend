@@ -15,3 +15,4 @@ const messReviewsSchema = new mongoose.Schema({
 });
 
 export const MessReviews = mongoose.model("MessReviews", messReviewsSchema);
+export type MessReviews = typeof MessReviews;

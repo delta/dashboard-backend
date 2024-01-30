@@ -20,3 +20,4 @@ const messesSchema = new mongoose.Schema({
 });
 
 export const Messes = mongoose.model("Messes", messesSchema);
+export type Messes = typeof Messes;
