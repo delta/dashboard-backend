@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const messReviewsSchema = new mongoose.Schema({
+const messReviewSchema = new mongoose.Schema({
   messID: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Mess",
@@ -14,5 +14,5 @@ const messReviewsSchema = new mongoose.Schema({
   time: Date,
 });
 
-export const MessReviews = mongoose.model("MessReviews", messReviewsSchema);
-export type MessReviews = typeof MessReviews;
+export const MessReview = mongoose.model("MessReview", messReviewSchema);
+export type MessReview = typeof MessReview;

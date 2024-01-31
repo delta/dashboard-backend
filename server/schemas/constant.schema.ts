@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const constantsSchema = new mongoose.Schema({
+const constantSchema = new mongoose.Schema({
   constKey: {
     type: String,
     unique: true,
@@ -8,10 +8,10 @@ const constantsSchema = new mongoose.Schema({
   description: String,
   type: {
     type: String,
-    enum: ["One", "Two", "Three"],
+    enum: ["Number", "String", "Object", "Array"],
   },
   value: mongoose.Schema.Types.Mixed,
 });
 
-export const Constants = mongoose.model("Constants", constantsSchema);
-export type Constants = typeof Constants;
+export const Constant = mongoose.model("Constant", constantSchema);
+export type Constant = typeof Constant;

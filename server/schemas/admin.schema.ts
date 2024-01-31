@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import { accesses } from "../utils/constants";
 
-const adminsSchema = new mongoose.Schema({
+const adminSchema = new mongoose.Schema({
   webmail: {
     type: String,
     unique: true,
@@ -10,18 +11,13 @@ const adminsSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  accesses: [
+  access: [
     {
       type: String,
-      enum: [
-        "GetMessList",
-        "GetMessUnallottedUsers",
-        "OpenOrCloseMessRegistration",
-        "MessAllotment",
-      ],
+      enum: accesses,
     },
   ],
 });
 
-export const Admins = mongoose.model("Admins", adminsSchema);
-export type Admins = typeof Admins;
+export const Admin = mongoose.model("Admin", adminSchema);
+export type Admin = typeof Admin;

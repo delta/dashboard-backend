@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userMessDetailsSchema = new mongoose.Schema({
+const userMessDetailSchema = new mongoose.Schema({
   messID: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Mess",
@@ -15,8 +15,8 @@ const userMessDetailsSchema = new mongoose.Schema({
   isEligibleForRegistering: Boolean,
 });
 
-export const UserMessDetails = mongoose.model(
-  "UserMessDetails",
-  userMessDetailsSchema
+export const UserMessDetail = mongoose.model(
+  "UserMessDetail",
+  userMessDetailSchema
 );
-export type UserMessDetails = typeof UserMessDetails;
+export type UserMessDetail = typeof UserMessDetail;

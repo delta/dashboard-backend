@@ -11,5 +11,5 @@ const userDetailSchema = new mongoose.Schema({
   roomNumber: Number,
 });
 
-export const UserDetails = mongoose.model("UserDetails", userDetailSchema);
-export type UserDetails = typeof UserDetails;
+export const UserDetail = mongoose.model("UserDetail", userDetailSchema);
+export type UserDetail = typeof UserDetail;

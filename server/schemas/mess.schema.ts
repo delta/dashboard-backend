@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import { batches } from "../utils/constants";
 
-const messesSchema = new mongoose.Schema({
+const messSchema = new mongoose.Schema({
   messName: {
     type: String,
     unique: true,
@@ -15,9 +16,12 @@ const messesSchema = new mongoose.Schema({
     unique: true,
   },
   rating: Number,
-  batches: [String],
-  hostelNames: [String],
+  batch: {
+    type: String,
+    enum: batches,
+  },
+  hostelName: [String],
 });
 
-export const Messes = mongoose.model("Messes", messesSchema);
-export type Messes = typeof Messes;
+export const Mess = mongoose.model("Mess", messSchema);
+export type Mess = typeof Mess;
