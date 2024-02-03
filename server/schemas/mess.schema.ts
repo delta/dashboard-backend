@@ -11,16 +11,13 @@ const messSchema = new mongoose.Schema({
     default: 0,
   },
   capacity: Number,
-  location: {
-    type: String,
-    unique: true,
-  },
+  location: [String],
   rating: Number,
   batch: {
     type: String,
     enum: batches,
   },
-  hostelName: [String],
+  hostelNames: [String],
 });
 
 export const Mess = mongoose.model("Mess", messSchema);
