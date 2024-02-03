@@ -26,4 +26,11 @@ const batches = [
 
 const genders = ["MALE", "FEMALE"];
 
-export { batches, genders };
+const accesses = [
+  "GetMessList",
+  "GetMessUnallottedUsers",
+  "OpenOrCloseMessRegistration",
+  "MessAllotment",
+];
+
+export { batches, genders, accesses };
